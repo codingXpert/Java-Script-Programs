@@ -7,16 +7,35 @@
 
 */
 
+// Method 1 :- By calculating sum
+
+// function findMissingNumber(num) {
+//     const length = num.length;
+//     let originalSum = (length * (length + 1))  / 2;
+//     console.log(originalSum);
+//     let calculatedSum = 0;
+//     num.forEach((val) => {
+//         calculatedSum += val;
+//     }) ;
+//     return originalSum - calculatedSum;
+// }
+// console.log(findMissingNumber([1,0,2,3,5]));
 
 
+
+
+// Method 2:- By XOR Operator(Bit manipulation)
 function findMissingNumber(num) {
-    const length = num.length;
-    let originalSum = (length * (length + 1))  / 2;
-    console.log(originalSum);
-    let calculatedSum = 0;
+    let XOR = 0;
+    for(let i=0;i<=num.length;i++){
+        XOR = XOR ^ i;
+    }
+
     num.forEach((val) => {
-        calculatedSum += val;
-    }) ;
-    return originalSum - calculatedSum;
+        XOR = XOR ^ val;
+    });
+    return XOR;
 }
-console.log(findMissingNumber([1,0,2,3,5]));
+
+console.log(findMissingNumber([0,1,3]));
+   
