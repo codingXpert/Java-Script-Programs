@@ -2,8 +2,8 @@ function tripletSum(arr, x) {
   const length = arr.length;
   const targetSum = x;
   let count = 0;
-  for (let i = 0; i < length; i++) {
-    for (let j = i + 1; j < length; j++) {
+  for (let i = 0; i < length-2; i++) {
+    for (let j = i + 1; j < length-1; j++) {
       for (let k = j + 1; k < length; k++) {
         let tripletSum = arr[i] + arr[j] + arr[k];
         if (tripletSum == targetSum) {
